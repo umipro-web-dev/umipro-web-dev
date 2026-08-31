@@ -12,6 +12,20 @@
         </nav>
       </div>
     </header>
+    
+    <main class="main-content">
+      <div class="hero-section">
+        <div class="hero-content">
+          <h2 class="hero-title">開発を流れるように</h2>
+          <p class="hero-subtitle">DevFlow で最高の開発体験を実現</p>
+          
+          <div class="cta-buttons">
+            <button class="btn btn-signup btn-large">今すぐ新規登録</button>
+            <button class="btn btn-login-large btn-large">ログインはこちら</button>
+          </div>
+        </div>
+      </div>
+    </main>
   </div>
 </template>
 
@@ -132,6 +146,86 @@ header {
   transform: translateY(0);
 }
 
+/* Main Content */
+.main-content {
+  width: 100%;
+  height: calc(100% - 10vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.hero-section {
+  width: 100%;
+  max-width: 1000px;
+  text-align: center;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  background: linear-gradient(135deg, #64e1dc 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #a1a1a6;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 0.75rem;
+}
+
+.btn-login-large {
+  background-color: transparent;
+  color: #a1a1a6;
+  border: 2px solid #525257;
+}
+
+.btn-login-large:hover {
+  background-color: rgba(82, 82, 87, 0.1);
+  border-color: #64e1dc;
+  color: #64e1dc;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(100, 225, 220, 0.2);
+}
+
 @media (max-width: 768px) {
   .header-container {
     padding: 0 1rem;
@@ -148,6 +242,24 @@ header {
 
   .logo-icon {
     font-size: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .cta-buttons {
+    gap: 1rem;
+  }
+
+  .btn-large {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+    width: 100%;
   }
 }
 </style>
